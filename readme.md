@@ -1,6 +1,6 @@
 # C++ Boilerplate
 [![Build Status](https://travis-ci.org/divi9626/PID_controller.svg?branch=master)](https://travis-ci.org/divi9626/PID_controller)
-[![Coverage Status](https://coveralls.io/repos/github/dpiet/cpp-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/dpiet/cpp-boilerplate?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/divi9626/PID_controller/badge.svg?branch=master)](https://coveralls.io/github/divi9626/PID_controller?branch=master)
 ---
 
 ## Overview
