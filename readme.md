@@ -5,6 +5,8 @@
 
 ## Overview
 
+Part 1: Driver: divi9626 (Divyam)  Navigator : Pradeep-Gopal (Pradeep) 
+
 Simple starter C++ project with:
 
 - cmake
