@@ -1,8 +1,36 @@
+/**
+ * @defgroup   LIB library
+ *
+ * @brief      This file implements library.
+ *
+ * @author     Divyam
+ * @date       2020
+ */
 #pragma once
 
 #include<iostream>
+#include <unistd.h>
 
-void dummy()
-{
-    std::cout << "HI" << std::endl;
-}
+class PidController{
+private:
+	float Kp, Ki, Kd;
+
+public:
+
+	double desiredVel, currentVel;
+
+	PidController();
+
+
+	void setValues();
+
+
+	void setVelocity();
+
+
+	double runController();
+
+
+	~PidController();
+
+};
