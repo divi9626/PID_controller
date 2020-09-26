@@ -9,7 +9,7 @@
  */
 
 #include <iostream>
-#include "lib.hpp"
+#include "PidController.hpp"
 
 /**
  * @brief      Constructor initialises the variables
@@ -20,26 +20,22 @@ PidController::PidController()
       Kd(0),
       desiredVel(0),
       currentVel(0) {
-  std::cout << "Constructor is called" << std::endl;
-}
+  std::cout << "Constructor is called" << std::endl; }
 
 PidController::~PidController() {
-  std::cout << "Destructor is called" << std::endl;
-}
+  std::cout << "Destructor is called" << std::endl; }
  /**
  * @brief This function sets the gain values for the PID controller.
  */
 void PidController::setValues() {
-  std::cout << "setValues function is called" << std::endl;
-}
+  std::cout << "setValues function is called" << std::endl; }
 /**
  * @brief This function sets the velocities.
  * @param desiredVel is the desired velocity 
  * @param currentVel is the current velocity 
  */
 void PidController::setVelocity(double desiredVel, double currentVel) {
-  std::cout << "setVelocity function is called" << std::endl;
-}
+  std::cout << "setVelocity function is called" << std::endl; }
 /**
  * @brief This function implements the error formula for the PID controller
  * for a given fixed point and the input. This is calculated at a particular
@@ -51,6 +47,4 @@ void PidController::setVelocity(double desiredVel, double currentVel) {
  * @return Control Error of data type double which is converted to current velocity.
  */
 double PidController::runController() {
-  std::cout << "runController function is called" << std::endl;
-  return 0;
-}
+  std::cout << "runController function is called" << std::endl; }

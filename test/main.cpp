@@ -1,13 +1,11 @@
 /**
- * @defgroup   LIB library
+ * @defgroup   TEST test
  *
- * @brief      This file implements library.
- *
+ * @brief      This file testing of the program.
+ * @copyright Copyright 2020 Divyam Garg. All rights reserved
  * @author     Divyam
  * @date       2020
- * @copyright Copyright 2020 Divyam Garg. All rights reserved
  */
-
 #include <gtest/gtest.h>
 
 int main(int argc, char** argv) {
