@@ -2,7 +2,7 @@
 #include <unistd.h>
 #include <lib.hpp>
 
-PidController::PidController(){
+PidController::PidController():Kp(0), Ki(0), Kd(0), desiredVel(0), currentVel(0){
 	std::cout << "Constructor is called" << std::endl;
 }
 
