@@ -25,7 +25,7 @@ public:
 	void setValues();
 
 
-	void setVelocity();
+	void setVelocity(double desiredVel, double currentVel);
 
 
 	double runController();
