@@ -1,7 +1,7 @@
 /**
  * @defgroup   LIB library
- *
- * @brief      This file implements library.
+ * 
+ * @brief      This file implements class declaration.
  *
  * @author     Divyam
  * @date       2020

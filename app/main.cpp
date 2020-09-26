@@ -1,7 +1,7 @@
 /**
  * @defgroup   LIB library
  *
- * @brief      This file implements library.
+ * @brief      This file is the main function which instantiate the object and implemets the function.
  *
  * @author     Divyam
  * @date       2020
