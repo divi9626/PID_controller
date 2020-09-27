@@ -30,6 +30,16 @@ PidController::~PidController() {
 void PidController::setValues() {
   std::cout << "setValues function is called" << std::endl; }
 /**
+ * @brief       Next three functions return values of KP, Ki and Kd
+ *
+ * @return     The propotional gain.
+ * @return     The total gain
+ * @return     The last gain
+ */
+double PidController::getPropotionalGain() {return 0;}
+double PidController::getTotalGain() {return 0;}
+double PidController::getLastGain() {return 0;}
+/**
  * @brief This function sets the velocities.
  * @param desiredVel is the desired velocity 
  * @param currentVel is the current velocity 

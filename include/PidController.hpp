@@ -19,6 +19,9 @@ class PidController{
     double desiredVel, currentVel;
     PidController();
     void setValues();
+    double getPropotionalGain();
+    double getTotalGain();
+    double getLastGain();
     void setVelocity(double desiredVel, double currentVel);
     double runController();
     ~PidController();
