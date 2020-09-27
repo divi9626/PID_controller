@@ -11,6 +11,9 @@
 
 PidController pid;
 
+/**
+ * This test checks the convergence
+ */
 TEST(test1, check_computing) {
     double actual_vel;
     pid.setValues();
@@ -19,9 +22,12 @@ TEST(test1, check_computing) {
     EXPECT_NEAR(actual_vel, 100.0, 0.1);
 }
 
+/**
+ * This test checks the values of gain coeffecients
+ */
 TEST(test2, check_gains) {
-	pid.setValues();
-	ASSERT_DOUBLE_EQ(pid.getPropotionalGain(), 0.2);
-	ASSERT_DOUBLE_EQ(pid.getTotalGain(), 0.2);
-	ASSERT_DOUBLE_EQ(pid.getLastGain(), 0.2);
+    pid.setValues();
+    ASSERT_DOUBLE_EQ(pid.getPropotionalGain(), 0.2);
+    ASSERT_DOUBLE_EQ(pid.getTotalGain(), 0.2);
+    ASSERT_DOUBLE_EQ(pid.getLastGain(), 0.2);
 }
