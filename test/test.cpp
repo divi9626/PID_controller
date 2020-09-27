@@ -11,6 +11,7 @@
 
 PidController pid;
 
+<<<<<<< HEAD
 TEST(test1, check_computing) {
     double actual_vel;
     pid.setValues();
@@ -19,3 +20,6 @@ TEST(test1, check_computing) {
     EXPECT_NEAR(actual_vel, 100.0, 0.1);
 }
 
+=======
+TEST(test1, check_computing) {EXPECT_EQ(1, 1);}
+>>>>>>> 82d864f733d552ce8b07ae60bacc4fd418df4411
