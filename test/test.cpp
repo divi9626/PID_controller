@@ -27,7 +27,7 @@ TEST(test1, check_computing) {
  */
 TEST(test2, check_gains) {
     pid.setValues();
-    ASSERT_DOUBLE_EQ(pid.getPropotionalGain(), 0.2);
-    ASSERT_DOUBLE_EQ(pid.getTotalGain(), 0.2);
-    ASSERT_DOUBLE_EQ(pid.getLastGain(), 0.2);
+    ASSERT_FLOAT_EQ(pid.getPropotionalGain(), 0.2);
+    ASSERT_FLOAT_EQ(pid.getTotalGain(), 0.2);
+    ASSERT_FLOAT_EQ(pid.getLastGain(), 0.2);
 }

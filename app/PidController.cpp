@@ -1,18 +1,24 @@
 /**
- * @defgroup   LIB library
- *
+ *@file PidController.cpp
+ * @version    1.0
  * @brief      This file populates PidController class.
- * @Created on Sept 24th 2020
- * @author     Divyam
- * @date       2020
- * @copyright Copyright 2020. All rights reserved
+ * @created on 24th Sept 2020
+ * @copyright  Copyright 2020. All rights reserved
+ * @Author Part 1: Pradeep Gopal (Driver),  Divyam Garg (Navigator)
+ * @Author Part 2: Aditya Goswami (Driver),  Loic Barret (Navigator)
  */
 
-#include <iostream>
+// user defined header file
 #include "PidController.hpp"
+#include <unistd.h>
+
+// C++ header files
+#include <iostream>
 
 /**
- * @brief      Constructor initialises the variables
+ * @brief PidController constructor
+ * @param none
+ * @return none
  */
 PidController::PidController()
     : Kp(0),
@@ -20,32 +26,42 @@ PidController::PidController()
       Kd(0),
       desiredVel(0),
       currentVel(0) {
-  std::cout << "Constructor is called" << std::endl; }
-
-PidController::~PidController() {
-  std::cout << "Destructor is called" << std::endl; }
+}
  /**
  * @brief This function sets the gain values for the PID controller.
+ * @param none
+ * @return none
  */
 void PidController::setValues() {
-  std::cout << "setValues function is called" << std::endl; }
+  Kp = 0.2;
+  Ki = 0.2;
+  Kd = 0.2; }
 /**
- * @brief       Next three functions return values of KP, Ki and Kd
- *
+ * @brief      Next three functions return values of KP, Ki and Kd
+ * @param      none
  * @return     The propotional gain.
  * @return     The total gain
  * @return     The last gain
  */
-double PidController::getPropotionalGain() {return 0;}
-double PidController::getTotalGain() {return 0;}
-double PidController::getLastGain() {return 0;}
+double PidController::getPropotionalGain() {
+  return Kp;
+}
+double PidController::getTotalGain() {
+  return Ki;
+}
+double PidController::getLastGain() {
+  return Kd;
+}
 /**
  * @brief This function sets the velocities.
  * @param desiredVel is the desired velocity 
- * @param currentVel is the current velocity 
- */
+ * @param currentVel is the current velocity
+ * @return none
+ */ 
 void PidController::setVelocity(double desiredVel, double currentVel) {
-  std::cout << "setVelocity function is called" << std::endl; }
+  this->desiredVel = desiredVel;
+  this->currentVel = currentVel;
+}
 /**
  * @brief This function implements the error formula for the PID controller
  * for a given fixed point and the input. This is calculated at a particular
@@ -57,4 +73,38 @@ void PidController::setVelocity(double desiredVel, double currentVel) {
  * @return Control Error of data type double which is converted to current velocity.
  */
 double PidController::runController() {
-  std::cout << "runController function is called" << std::endl; }
+  // double temp, input, previous error, error, current error, total error;
+  double temp = 0;
+  double input = temp;
+  double prev_error = temp;
+  double error = temp;
+  double total_gain = temp;
+  double current_error = 0;
+  double total_error = current_error;
+
+  while (currentVel <= desiredVel) {
+    // double P (proportional coefficient),
+    // I (Integral coefficient), D (differential coefficient)
+    double P, I, D;
+    prev_error = current_error;
+    error = (desiredVel - currentVel);
+    current_error = error;
+
+    if (total_error > error || total_error == 0) {
+      total_error = 0;
+    } else {
+      total_error = total_error + current_error;
+    }
+    P = Kp * error;
+    I = Ki * total_error;
+    D = Kd * (current_error - prev_error);
+    total_gain = P + I + D;
+    input = total_gain;
+    currentVel = input + currentVel;
+    if (error <= 0.01) {
+      break;
+    }
+    usleep(200000);
+  }
+  return currentVel;
+}
