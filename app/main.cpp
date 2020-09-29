@@ -3,12 +3,14 @@
  *
  * @brief      This file is the main function which instantiate the object and implemets the function.
  * @created on 24th Sept 2020
- * @author     Divyam
+ * @author     Divyam Garg(driver) Pradeep Gopal(navigator) 
  * @date       2020
- * @copyright Copyright 2020 Divyam Garg. All rights reserved
+ * @copyright Copyright 2020. All rights reserved
  */
-
+// c++ header file
 #include <iostream>
+
+// user defined header file 
 #include "PidController.hpp"
 
 int main() {
