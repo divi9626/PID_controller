@@ -9,6 +9,7 @@
  */
 
 #include <iostream>
+#include <unistd.h>
 #include "PidController.hpp"
 
 /**
@@ -20,22 +21,24 @@ PidController::PidController()
       Kd(0),
       desiredVel(0),
       currentVel(0) {
-  std::cout << "Constructor is called" << std::endl; }
+  //std::cout << "Constructor is called" << std::endl; 
+}
 
 PidController::~PidController() {
-  std::cout << "Destructor is called" << std::endl; }
+  //std::cout << "Destructor is called" << std::endl; 
+}
  /**
  * @brief This function sets the gain values for the PID controller.
  */
 void PidController::setValues() {
-  std::cout << "setValues function is called" << std::endl;
+  //std::cout << "setValues function is called" << std::endl;
   Kp = 0.2;
   Ki = 0.2;
   Kd = 0.2; 
 }
 /**
- * @brief       Next three functions return values of KP, Ki and Kd
- *
+ * @brief      Next three functions return values of KP, Ki and Kd
+ * @param      none
  * @return     The propotional gain.
  * @return     The total gain
  * @return     The last gain
@@ -55,7 +58,7 @@ double PidController::getLastGain() {
  * @param currentVel is the current velocity 
  */
 void PidController::setVelocity(double desiredVel, double currentVel) {
-  std::cout << "setVelocity function is called" << std::endl; 
+  //std::cout << "setVelocity function is called" << std::endl; 
   this->desiredVel = desiredVel;
   this->currentVel = currentVel;
 }
@@ -70,4 +73,37 @@ void PidController::setVelocity(double desiredVel, double currentVel) {
  * @return Control Error of data type double which is converted to current velocity.
  */
 double PidController::runController() {
-  std::cout << "runController function is called" << std::endl; }
+  std::cout << "New Velocity is " << std::endl; 
+  double P, I, D;
+  double input = 0;
+  double prev_error = 0;
+  double error = 0;
+  double total_gain = 0;
+  double current_error = 0;
+  double total_error = current_error; 
+
+  while(currentVel <= desiredVel){ // modify the while condition
+    prev_error = current_error;
+    error = (desiredVel - currentVel);
+    current_error = error;
+
+    if (total_error > error || total_error == 0){
+      total_error = 0;
+    }
+    else {
+      total_error = total_error + current_error;
+    }
+    P = Kp * error;
+    I = Ki * total_error;
+    D = Kd * (current_error - prev_error);
+    total_gain = P + I + D;
+    input = total_gain;
+    currentVel = input + currentVel;
+    if (error <= 0.01){
+      break;
+    }
+    usleep(200000);
+  }
+  //std::cout << currentVel << std::endl;
+  return currentVel;
+}
