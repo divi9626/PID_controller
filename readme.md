@@ -10,6 +10,30 @@ Tools like cpp-check and cpplint are used for the clean development and there re
 AUTHORS FOR PART 1
 Part 1: Driver: divi9626 (Divyam)  Navigator : Pradeep-Gopal (Pradeep) 
 
+AUTHORS FOR PART 2
+Part 1: Driver: Loic Barret  Navigator : Aditya Goswami
+
+##### Discussion Notes
+For this assignment we conducted two discussion meetings. First, before fully implementing part1, regarding how the project should be developed. Second, after Part2, regarding what kind of changes are needed to be done.
+
+First discussion zoom meeting took place on 22th September between 5:30 pm to 6:30 pm. In this meeting, we covered the concepts regarding pair programming, decided the drivers and navigators for part 1 and discussed what kind of unit test can be developed for a generalized system. Few doubts regarding the directory structure, git commiting & git pull request, Travis & Coveralls badges and regarding UML diagrams were also discussed.
+
+Second discussion zoom meeting took place on 24th September between 10:00 pm to 12:00 am . In this meeting, we firstly resolved issues regrading part 1 and then completed part 2. After implementing correct compute function of both the pairs, pull request where generated and tested in travis before finally merging it into the repository. After mergeing it, we discussed following topics and listed out further improvements in TODO section.
+
+Note: Discussion Notes and TODO were added after mergeing the pull request, because we wanted to make sure that we aren't facing any issuses regarding Travis and Coveralls badges.
+
+### Discussion Topics:
+
+*-C++:* Discussed improvements regarding code developed in part 1 and part 2, mostly how we can use inline contructors and auto & decltype keyword to corporate C++11 syntax in our code. Along with that, file naming conventions and necessary improvements regarding C++ coding were suggested.
+*-UML Diagram & Object oriented class definition:* Discussed how class implementation can be done in a better way, mainly regarding how private member variables in a particular class can be selected. Suggestions regarding PID algorithm variables like previous_error_, accumulation_error_ should be class variables instead of local class method variables to retain their values. This can facilitate easy integration with other class modules and control loop in main function.
+*-PID Controller Implementation:* Discussed the ways in which both pairs have implemented PID controller.
+*-Test cases:* Discussed various test cases that can be developed for PID Controller and mentioned the new test cases that can be incorported within the program in TODO list. Also, discussed the difference between EXPECT & ASSERT macros and made suggestions of incorporating it in the test cases. Furthermore, suggestion of incorporating new test cases listed in Test Cases section were discussed to implement in our repository.
+
+TO DO: 
+Build and coverage badge issues - resolved on 25 & 29 respectiviely 
+
+####
+
 Simple project with:
 
 - cmake
