@@ -28,7 +28,11 @@ PidController::~PidController() {
  * @brief This function sets the gain values for the PID controller.
  */
 void PidController::setValues() {
-  std::cout << "setValues function is called" << std::endl; }
+  std::cout << "setValues function is called" << std::endl;
+  Kp = 0.2;
+  Ki = 0.2;
+  Kd = 0.2; 
+}
 /**
  * @brief       Next three functions return values of KP, Ki and Kd
  *
