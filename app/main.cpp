@@ -10,7 +10,7 @@
 // c++ header file
 #include <iostream>
 
-// user defined header file 
+// user defined header file for PID Controller
 #include "PidController.hpp"
 
 int main() {
