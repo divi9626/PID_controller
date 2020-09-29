@@ -4,17 +4,20 @@
 ---
 
 ## Overview
+This repository is developed in order to implement PID controller on a mobile robot. The programming language used is C++. This is a team project and the names of driver and navigator are mentioned below.
 
+
+AUTHORS FOR PART 1
 Part 1: Driver: divi9626 (Divyam)  Navigator : Pradeep-Gopal (Pradeep) 
 
-Simple starter C++ project with:
+Simple project with:
 
 - cmake
 - googletest
 
 ## Standard install via command-line
 ```
-git clone --recursive https://github.com/dpiet/cpp-boilerplate
+git clone --recursive https://github.com/divi9626/PID_controller
 cd <path to repository>
 mkdir build
 cd build
@@ -41,7 +44,7 @@ In your Eclipse workspace directory (or create a new one), checkout the repo (an
 ```
 mkdir -p ~/workspace
 cd ~/workspace
-git clone --recursive https://github.com/dpiet/cpp-boilerplate
+git clone --recursive https://github.com/divi9626/PID_controller
 ```
 
 In your work directory, use cmake to create an Eclipse project for an [out-of-source build] of cpp-boilerplate
