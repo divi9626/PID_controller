@@ -1,10 +1,11 @@
 /**
- * @file PidController.cpp
- * @version 1.0
- * @brief This file populates PidController class.
- * @Created on: Sep 24, 2020
- * @copyright 2020. All rights reserved
- * @Author Divyam Garg (Driver),  Pradeep Gopal (Navigator)
+ *@file PidController.cpp
+ * @version    1.0
+ * @brief      This file populates PidController class.
+ * @created on 24th Sept 2020
+ * @copyright  Copyright 2020. All rights reserved
+ * @Author Part 1: Pradeep Gopal (Driver),  Divyam Garg (Navigator)
+ * @Author Part 2: Aditya Goswami (Driver),  Loic Barret (Navigator)
  */
 
 // user defined header file
@@ -26,17 +27,10 @@ PidController::PidController()
       desiredVel(0),
       currentVel(0) {
 }
-
-/**
- * @brief PidController destructor
- * @param none
- * @return none
- */
-// PidController::~PidController() {
-  
-// }
  /**
  * @brief This function sets the gain values for the PID controller.
+ * @param none
+ * @return none
  */
 void PidController::setValues() {
   
@@ -63,8 +57,9 @@ double PidController::getLastGain() {
 /**
  * @brief This function sets the velocities.
  * @param desiredVel is the desired velocity 
- * @param currentVel is the current velocity 
- */
+ * @param currentVel is the current velocity
+ * @return none
+ */ 
 void PidController::setVelocity(double desiredVel, double currentVel) {
   
   this->desiredVel = desiredVel;
@@ -80,9 +75,10 @@ void PidController::setVelocity(double desiredVel, double currentVel) {
  *                  PID controller error was calculated.
  * @return Control Error of data type double which is converted to current velocity.
  */
-double PidController::runController() {
-  std::cout << "New Velocity is " << std::endl; 
+double PidController::runController() { 
+  // double P (proportional coefficient), I (Integral coefficient), D (differential coefficient)
   double P, I, D;
+  // double input, previous error, error, current error, total error;
   double input = 0;
   double prev_error = 0;
   double error = 0;
@@ -90,12 +86,12 @@ double PidController::runController() {
   double current_error = 0;
   double total_error = current_error; 
 
-  while(currentVel <= desiredVel){
+  while(currentVel <= desiredVel) {
     prev_error = current_error;
     error = (desiredVel - currentVel);
     current_error = error;
 
-    if (total_error > error || total_error == 0){
+    if (total_error > error || total_error == 0) {
       total_error = 0;
     }
     else {
@@ -107,7 +103,7 @@ double PidController::runController() {
     total_gain = P + I + D;
     input = total_gain;
     currentVel = input + currentVel;
-    if (error <= 0.01){
+    if (error <= 0.01) {
       break;
     }
     usleep(200000);

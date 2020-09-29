@@ -15,10 +15,15 @@
 
 int main() {
   double actual_vel;
+  //Object created 
   PidController pid;
+  //Setter function is called to set the gain values
   pid.setValues();
+  //Setter function is called to set the target velocity and actual velocity
   pid.setVelocity(20.0, 5.0);
+  //Compute function called
   actual_vel = pid.runController();
+  //Actual velocity is pronted as the output
   std::cout << actual_vel << std::endl;
   return 0;
 }
