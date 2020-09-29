@@ -1,19 +1,23 @@
 /**
- * @defgroup   LIB library
- *
- * @brief      This file populates PidController class.
- * @Created on Sept 24th 2020
- * @author     Divyam
- * @date       2020
- * @copyright Copyright 2020. All rights reserved
+ * @file PidController.cpp
+ * @version 1.0
+ * @brief This file populates PidController class.
+ * @Created on: Sep 24, 2020
+ * @copyright 2020. All rights reserved
+ * @Author Divyam Garg (Driver),  Pradeep Gopal (Navigator)
  */
 
-#include <iostream>
-#include <unistd.h>
+// user defined header file
 #include "PidController.hpp"
+#include <unistd.h>
+
+// C++ header files
+#include <iostream>
 
 /**
- * @brief      Constructor initialises the variables
+ * @brief PidController constructor
+ * @param none
+ * @return none
  */
 PidController::PidController()
     : Kp(0),
@@ -21,17 +25,21 @@ PidController::PidController()
       Kd(0),
       desiredVel(0),
       currentVel(0) {
-  //std::cout << "Constructor is called" << std::endl; 
 }
 
-PidController::~PidController() {
-  //std::cout << "Destructor is called" << std::endl; 
-}
+/**
+ * @brief PidController destructor
+ * @param none
+ * @return none
+ */
+// PidController::~PidController() {
+  
+// }
  /**
  * @brief This function sets the gain values for the PID controller.
  */
 void PidController::setValues() {
-  //std::cout << "setValues function is called" << std::endl;
+  
   Kp = 0.2;
   Ki = 0.2;
   Kd = 0.2; 
@@ -58,7 +66,7 @@ double PidController::getLastGain() {
  * @param currentVel is the current velocity 
  */
 void PidController::setVelocity(double desiredVel, double currentVel) {
-  //std::cout << "setVelocity function is called" << std::endl; 
+  
   this->desiredVel = desiredVel;
   this->currentVel = currentVel;
 }
@@ -82,7 +90,7 @@ double PidController::runController() {
   double current_error = 0;
   double total_error = current_error; 
 
-  while(currentVel <= desiredVel){ // modify the while condition
+  while(currentVel <= desiredVel){
     prev_error = current_error;
     error = (desiredVel - currentVel);
     current_error = error;
@@ -104,6 +112,5 @@ double PidController::runController() {
     }
     usleep(200000);
   }
-  //std::cout << currentVel << std::endl;
   return currentVel;
 }

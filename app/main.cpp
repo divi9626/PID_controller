@@ -17,7 +17,7 @@ int main() {
   double actual_vel;
   PidController pid;
   pid.setValues();
-  pid.setVelocity(100.0, 5.0);
+  pid.setVelocity(20.0, 5.0);
   actual_vel = pid.runController();
   std::cout << actual_vel << std::endl;
   return 0;

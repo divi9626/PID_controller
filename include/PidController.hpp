@@ -24,5 +24,5 @@ class PidController{
     double getLastGain();
     void setVelocity(double desiredVel, double currentVel);
     double runController();
-    ~PidController();
+    //~PidController();
 };
