@@ -5,7 +5,7 @@
 
 ## Overview
 This repository is developed in order to implement PID controller on a mobile robot. The programming language used is C++. This is a team project and the names of driver and navigator are mentioned below.
-Tools like cpp-check and cpplint are used for the clean development and there results are in the "results" folder
+Tools like cpp-check and cpplint are used for the clean development and there results are in the "results" folder.
 
 AUTHORS FOR PART 1
 Part 1: Driver: divi9626 (Divyam)  Navigator : Pradeep-Gopal (Pradeep) 
