@@ -15,12 +15,12 @@
  * interval and error variables. It has the method to implement PID controller to achieve the 
  * desired goal and methods to get the error variables and time interval. 
  */
-class PidController{
-    //Contains private data members
+class PidController {
+    // Contains private data members
  private:
     float Kp, Ki, Kd;
 
-    //Contains public data members
+    // Contains public data members
  public:
     double desiredVel, currentVel;
 

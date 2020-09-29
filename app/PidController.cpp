@@ -33,11 +33,9 @@ PidController::PidController()
  * @return none
  */
 void PidController::setValues() {
-  
   Kp = 0.2;
   Ki = 0.2;
-  Kd = 0.2; 
-}
+  Kd = 0.2; }
 /**
  * @brief      Next three functions return values of KP, Ki and Kd
  * @param      none
@@ -61,7 +59,6 @@ double PidController::getLastGain() {
  * @return none
  */ 
 void PidController::setVelocity(double desiredVel, double currentVel) {
-  
   this->desiredVel = desiredVel;
   this->currentVel = currentVel;
 }
@@ -75,26 +72,27 @@ void PidController::setVelocity(double desiredVel, double currentVel) {
  *                  PID controller error was calculated.
  * @return Control Error of data type double which is converted to current velocity.
  */
-double PidController::runController() { 
-  // double P (proportional coefficient), I (Integral coefficient), D (differential coefficient)
-  double P, I, D;
-  // double input, previous error, error, current error, total error;
-  double input = 0;
-  double prev_error = 0;
-  double error = 0;
-  double total_gain = 0;
+double PidController::runController() {
+  // double temp, input, previous error, error, current error, total error;
+  double temp = 0;
+  double input = temp;
+  double prev_error = temp;
+  double error = temp;
+  double total_gain = temp;
   double current_error = 0;
-  double total_error = current_error; 
+  double total_error = current_error;
 
-  while(currentVel <= desiredVel) {
+  while (currentVel <= desiredVel) {
+    // double P (proportional coefficient),
+    // I (Integral coefficient), D (differential coefficient)
+    double P, I, D;
     prev_error = current_error;
     error = (desiredVel - currentVel);
     current_error = error;
 
     if (total_error > error || total_error == 0) {
       total_error = 0;
-    }
-    else {
+    } else {
       total_error = total_error + current_error;
     }
     P = Kp * error;
