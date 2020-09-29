@@ -5,7 +5,7 @@
  * @Created on Sept 24th 2020
  * @author     Divyam
  * @date       2020
- * @copyright Copyright 2020 Divyam Garg. All rights reserved
+ * @copyright Copyright 2020. All rights reserved
  */
 
 #include <iostream>
