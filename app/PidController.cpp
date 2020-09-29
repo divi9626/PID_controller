@@ -36,9 +36,12 @@ void PidController::setValues() {
  * @return     The total gain
  * @return     The last gain
  */
-double PidController::getPropotionalGain() {return 0;}
-double PidController::getTotalGain() {return 0;}
-double PidController::getLastGain() {return 0;}
+double PidController::getPropotionalGain() {
+  return Kp;}
+double PidController::getTotalGain() {
+  return Ki;}
+double PidController::getLastGain() {
+  return Kd;}
 /**
  * @brief This function sets the velocities.
  * @param desiredVel is the desired velocity 
