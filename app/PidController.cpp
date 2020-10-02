@@ -4,7 +4,7 @@
  * @brief      This file populates PidController class.
  * @created on 24th Sept 2020
  * @copyright  Copyright 2020. All rights reserved
- * @Author Part 1: Pradeep Gopal (Driver),  Divyam Garg (Navigator)
+ * @Author Part 1: Divyam Garg (Driver), Pradeep Gopal (Navigator)
  * @Author Part 2: Aditya Goswami (Driver),  Loic Barret (Navigator)
  */
 
