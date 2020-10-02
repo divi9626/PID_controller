@@ -4,7 +4,7 @@
  * @brief      This file is the main function which instantiate the object and implemets the function.
  * @created on 24th Sept 2020
  * @copyright  Copyright 2020. All rights reserved
- * @Author Part 1: Pradeep Gopal (Driver),  Divyam Garg (Navigator)
+ * @Author Part 1: Divyam Garg (Driver),  Pradeep Gopal (Navigator)
  * @Author Part 2: Aditya Goswami (Driver),  Loic Barret (Navigator)
  */
 
